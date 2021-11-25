@@ -13,6 +13,7 @@
   font-display: block;
 }
 
+.buy-component__checkbox._active::before,
 [class^=_icon-]:before,
 [class*=" _icon-"]:before {
   font-family: "icons";
@@ -50,7 +51,8 @@
   content: "\e904";
 }
 
-._icon-check_2:before {
+._icon-check_2:before,
+.buy-component__checkbox._active:before {
   content: "\e905";
 }
 
@@ -397,9 +399,9 @@ textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -989,9 +991,9 @@ textarea {
 }
 
 .where-component {
-  padding-top: 40px;
+  padding-top: 55px;
   padding-right: 90px;
-  padding-bottom: 50px;
+  padding-bottom: 55px;
   padding-left: 90px;
   border: 3px solid #2B2847;
 }
@@ -1005,7 +1007,7 @@ textarea {
 }
 
 .where-component__title:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 29px;
 }
 
 .where-component__form {
@@ -1368,7 +1370,7 @@ textarea {
 }
 
 .no-webp .cream-component{
-  background-image: url("../../img/creamBg.png"); }
+  background-image: url("../img/creamBg.png"); }
 
 .cream-component {
   -webkit-box-flex: 0;
@@ -1498,10 +1500,33 @@ textarea {
 
 .buy-component__checkbox {
   text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .buy-component__checkbox:not(:last-child) {
   margin-bottom: 20px;
+}
+
+.buy-component__checkbox input {
+  display: none;
+}
+
+.buy-component__checkbox::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: #2B2847;
+  padding: 2px;
+  margin-right: 17px;
+  margin-top: 2px;
+}
+
+.buy-component__checkbox._active::before {
+  font-size: 18px;
+  color: #ffffff;
 }
 
 .buy-component__btn {
@@ -1994,7 +2019,7 @@ textarea {
   }
 
   .where-component {
-    padding-top: calc(10px + 30 * ((100vw - 320px) / 1150));
+    padding-top: calc(20px + 35 * ((100vw - 320px) / 1150));
   }
 
   .where-component {
@@ -2002,7 +2027,7 @@ textarea {
   }
 
   .where-component {
-    padding-bottom: calc(30px + 20 * ((100vw - 320px) / 1150));
+    padding-bottom: calc(30px + 25 * ((100vw - 320px) / 1150));
   }
 
   .where-component {
@@ -2011,6 +2036,10 @@ textarea {
 
   .where-component__title {
     font-size: calc(20px + 16 * ((100vw - 320px) / 1150));
+  }
+
+  .where-component__title:not(:last-child) {
+    margin-bottom: calc(9px + 20 * ((100vw - 320px) / 1150));
   }
 
   .where-component__input {
@@ -2195,6 +2224,9 @@ textarea {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 66.666%;
             flex: 0 1 66.666%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 
   .main__options {
@@ -2539,4 +2571,4 @@ textarea {
   }
 }
 
-.webp .cream-component{ background-image: url(../../img/creamBg.webp); }
+.webp .cream-component{ background-image: url(../img/creamBg.webp); }
