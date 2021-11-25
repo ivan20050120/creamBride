@@ -14,6 +14,7 @@
 }
 
 .buy-component__checkbox._active::before,
+.where-component__checkbox._active::before,
 [class^=_icon-]:before,
 [class*=" _icon-"]:before {
   font-family: "icons";
@@ -52,7 +53,8 @@
 }
 
 ._icon-check_2:before,
-.buy-component__checkbox._active:before {
+.buy-component__checkbox._active:before,
+.where-component__checkbox._active:before {
   content: "\e905";
 }
 
@@ -1032,16 +1034,14 @@ textarea {
 }
 
 .where-component__checkbox {
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-weight: 300;
   font-size: 18px;
   line-height: 122.2222222222%;
   color: #000000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
 .where-component__checkbox:not(:last-child) {
@@ -1049,8 +1049,23 @@ textarea {
 }
 
 .where-component__checkbox input {
+  display: none;
+}
+
+.where-component__checkbox::before {
+  content: "";
   display: block;
-  margin: 5px 17px 0 0;
+  width: 18px;
+  height: 18px;
+  background: #2B2847;
+  padding: 2px;
+  margin-right: 17px;
+  margin-top: 2px;
+}
+
+.where-component__checkbox._active::before {
+  font-size: 18px;
+  color: #ffffff;
 }
 
 .where-component__btn {
@@ -2048,6 +2063,10 @@ textarea {
 
   .where-component__checkbox {
     font-size: calc(12px + 6 * ((100vw - 320px) / 1150));
+  }
+
+  .where-component__checkbox:not(:last-child) {
+    margin-bottom: calc(15px + 5 * ((100vw - 320px) / 1150));
   }
 
   .order {
